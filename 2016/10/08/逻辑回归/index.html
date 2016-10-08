@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -107,7 +107,7 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
 这些都可以看做是分类问题，更准确地，都可以看做是二分类问题。
 Logistic 回归类似于线性回归模型，但更适用于因变量为二分变量的模型">
 <meta property="og:image" content="http://img.bimg.126.net/photo/f0Mks6829W47XdveM6NMug==/3415698842385787951.jpg">
-<meta property="og:updated_time" content="2016-10-08T11:15:08.000Z">
+<meta property="og:updated_time" content="2016-10-08T11:54:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="逻辑回归">
 <meta name="twitter:description" content="问题引出：实际工作中，我们可能会遇到如下问题：
@@ -143,7 +143,7 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
   <link rel="canonical" href="http://yoursite.com/2016/10/08/逻辑回归/"/>
 
 
-  <title> 逻辑回归 | LmouseXu </title>
+  <title> 逻辑回归 | LmouseXu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +164,7 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -332,52 +332,50 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
 <p>这些都可以看做是分类问题，更准确地，都可以看做是二分类问题。</p>
 <p>Logistic 回归类似于线性回归模型，但更适用于因变量为二分变量的模型<br><a id="more"></a></p>
 <h2 id="Sigmoid函数："><a href="#Sigmoid函数：" class="headerlink" title="Sigmoid函数："></a>Sigmoid函数：</h2><ul>
-<li><code>$h_\theta(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}$</code></li>
-<li>X是变量，<code>$\theta$</code>是参数</li>
+<li>$h_\theta(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}$</li>
+<li>X是变量，$\theta$是参数</li>
 <li>如果我们有合适的参数向量θ，以及样本x，那么对样本x分类就可以通过上式计算出一个概率值来，如果概率值大于0.5，我们就说样本是正类，否则样本是负类。</li>
 <li><img src="http://img.bimg.126.net/photo/f0Mks6829W47XdveM6NMug==/3415698842385787951.jpg" alt="Sigmoid函数"></li>
 <li>Logistic回归也可以被看成是一种概率估计</li>
 </ul>
 <h2 id="回归系数确定："><a href="#回归系数确定：" class="headerlink" title="回归系数确定："></a>回归系数确定：</h2><ul>
-<li>公式：<code>$z=w_0x_0 + w_1x_1 + w_2x_2 + \cdot\cdot\cdot + w_nx_n(z=w^Tx)$</code></li>
+<li>公式：$z=w_0x_0 + w_1x_1 + w_2x_2 + \cdot\cdot\cdot + w_nx_n(z=w^Tx)$</li>
 </ul>
 <h4 id="梯度上升法"><a href="#梯度上升法" class="headerlink" title="梯度上升法"></a>梯度上升法</h4><ul>
 <li>方法：要找到某函数的最大值，最好的方法是沿着该函数的梯度方向探寻。</li>
 <li>每次更新回归系数时需要遍历整个数据集，如果数据量过大，计算复杂度就太高。</li>
 </ul>
 <h4 id="梯度上升算法推导："><a href="#梯度上升算法推导：" class="headerlink" title="梯度上升算法推导："></a>梯度上升算法推导：</h4><ul>
-<li>Sigmoid函数：<code>$h_\theta(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}$</code></li>
-<li>由于sigma函数的特性，我们做如下假设：即在一直样本X和参数<code>$\theta$</code>的情况下，样本属于(y=1)和(y=0)条件概率<ul>
-<li><code>$P(y=1|x;\theta) = h_\theta(x)$</code></li>
-<li><code>$P(y=0|x;\theta) = 1-h_\theta(x)$</code></li>
+<li>Sigmoid函数：$h_\theta(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}$</li>
+<li>由于sigma函数的特性，我们做如下假设：即在一直样本X和参数$\theta$的情况下，样本属于(y=1)和(y=0)条件概率<ul>
+<li>$P(y=1|x;\theta) = h_\theta(x)$</li>
+<li>$P(y=0|x;\theta) = 1-h_\theta(x)$</li>
 </ul>
 </li>
-<li>单个样本正确预测的概率为：<code>$P(y|x;\theta) = (h_\theta(x))^y(1-h_\theta(x))^{1-y}$</code></li>
+<li>单个样本正确预测的概率为：$P(y|x;\theta) = (h<em>\theta(x))^y(1-h</em>\theta(x))^{1-y}$</li>
 <li><p>最大似然估计：</p>
-<p>  <code>$L(\theta)=p(\vec y|X;\theta)$</code></p>
-<p>  <code>$\ \ \ \ \ \ \ \  =\prod_{i=1}^mp(y^i|x^i;\theta)$</code></p>
-<p>  <code>$\ \ \ \ \ \ \ \ =\prod_{i=1}^m(h_\theta(x^i))^{y^i}(1-h_\theta(x^i))^{1-y^i}$</code></p>
+<p>  $L(\theta)=p(\vec y|X;\theta)$<br>  $\ \ \ \ \ \ \ \  =\prod<em>{i=1}^mp(y^i|x^i;\theta)$<br>  $\ \ \ \ \ \ \ \  =\prod</em>{i=1}^m(h<em>\theta(x^i))^{y^i}(1-h</em>\theta(x^i))^{1-y^i}$</p>
 </li>
-<li>转化： <code>$\frac{\partial\ell(\theta)}{\partial\theta_j}=\frac{\partial\ell(\theta)}{\partial g(\theta^Tx)}*\frac{\partial g(\theta^Tx)}{\partial\theta^Tx}*\frac{\partial(\theta^Tx)}{\partial\theta_j}$</code></li>
+<li><p>转化： $\frac{\partial\ell(\theta)}{\partial\theta_j}=\frac{\partial\ell(\theta)}{\partial g(\theta^Tx)}<em>\frac{\partial g(\theta^Tx)}{\partial\theta^Tx}</em>\frac{\partial(\theta^Tx)}{\partial\theta_j}$</p>
+</li>
 <li><p>求解1：</p>
-<p>  <code>$\ell(\theta)=logL(\theta)=\sum_{i=1}^my^ilogh(x^i)+(1-y^i)log(1-h(x^i))$</code></p>
-<p>  <code>$\frac{\partial}{\partial g(\theta^Tx)}\ell(\theta) = \frac{\partial(y*log(h_\theta(x))+(1-y)log(1-h_\theta(x)))}{\partial h_\theta(x)}$</code><br>  <code>$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  =y* \frac{1}{g(\theta^Tx)} + (1-y)* \frac{1}{1-g(\theta^Tx)}*(-1)$</code></p>
+<p>  $\ell(\theta)=logL(\theta)=\sum_{i=1}^my^ilogh(x^i)+(1-y^i)log(1-h(x^i))$</p>
+<p>  $\frac{\partial}{\partial g(\theta^Tx)}\ell(\theta) = \frac{\partial(y<em>log(h<em>\theta(x))+(1-y)log(1-h</em>\theta(x)))}{\partial h_\theta(x)}$<br>  $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  =y</em> \frac{1}{g(\theta^Tx)} + (1-y)<em> \frac{1}{1-g(\theta^Tx)}</em>(-1)$</p>
 </li>
 <li><p>求解2</p>
-<p>  <code>$g^\prime(z)=\frac{d}{dz}\frac{1}{1+e^{-z}}=\frac{1}{(1+e^{-z})^2}(e^{-z})=\frac{1}{1+e^{-z}}\cdot(1-\frac{1}{1+e^{-z}})=g(z)(1-g(z))$</code></p>
-<p>  <code>$\frac{\partial }{\partial\theta^Tx}g(\theta^Tx)=g(\theta^Tx)*(1-g(\theta^Tx))$</code></p>
+<p>  $g^\prime(z)=\frac{d}{dz}\frac{1}{1+e^{-z}}=\frac{1}{(1+e^{-z})^2}(e^{-z})=\frac{1}{1+e^{-z}}\cdot(1-\frac{1}{1+e^{-z}})=g(z)(1-g(z))$</p>
+<p>  $\frac{\partial }{\partial\theta^Tx}g(\theta^Tx)=g(\theta^Tx)*(1-g(\theta^Tx))$</p>
 </li>
-<li><p>求解3</p>
-<p>  <code>$\frac{\partial}{\partial\theta_j}\theta^Tx=\frac{\partial(\theta_1x_1+\theta_2x2+\cdots+\theta_mx_m)}{\partial\theta_j}=x_j$</code></p>
-</li>
-<li><p>代入进去得到：<br><code>$\frac{\partial}{\partial\theta_j}\ell(\theta)= (y-h_\theta(x))x_j$</code></p>
-</li>
-<li><p>梯度迭代公式为：<br>  <code>$\theta_j := \theta_j + \alpha(y^i - h_\theta(x^i))x_j^i$</code></p>
-</li>
+<li>求解3<br>  $\frac{\partial}{\partial\theta_j}\theta^Tx=\frac{\partial(\theta_1x_1+\theta_2x2+\cdots+\theta_mx_m)}{\partial\theta_j}=x_j$</li>
+<li>代入进去得到：<br>  $\frac{\partial}{\partial\theta<em>j}\ell(\theta)= (y-h</em>\theta(x))x_j$</li>
+<li>梯度迭代公式为：<br>  $\theta_j := \theta<em>j + \alpha(y^i - h</em>\theta(x^i))x_j^i$</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## Python实现</div><div class="line"></div><div class="line">* 基本方法</div><div class="line">```python</div><div class="line">def gradAscent(dataMatIn, classLabels):</div><div class="line">    dataMatrix = mat(dataMatIn)             #convert to NumPy matrix</div><div class="line">    labelMat = mat(classLabels).transpose() #convert to NumPy matrix</div><div class="line">    m,n = shape(dataMatrix)</div><div class="line">    alpha = 0.001</div><div class="line">    maxCycles = 500</div><div class="line">    weights = ones((n,1))</div><div class="line">    for k in range(maxCycles):              #heavy on matrix operations</div><div class="line">        h = sigmoid(dataMatrix*weights)     #matrix mult</div><div class="line">        error = (labelMat - h)              #vector subtraction</div><div class="line">        weights = weights + alpha * dataMatrix.transpose()* error #matrix mult</div><div class="line">    return weights</div></pre></td></tr></table></figure>
-<ul>
-<li>加入随机<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">stocGradAscent1</span><span class="params">(dataMatrix, classLabels, numIter=<span class="number">150</span>)</span>:</span></div><div class="line">    m,n = shape(dataMatrix)</div><div class="line">    weights = ones(n)   <span class="comment">#initialize to all ones</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(numIter):</div><div class="line">        dataIndex = range(m)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</div><div class="line">            alpha = <span class="number">4</span>/(<span class="number">1.0</span>+j+i)+<span class="number">0.0001</span>    <span class="comment">#apha decreases with iteration, does not</span></div><div class="line">            randIndex = int(random.uniform(<span class="number">0</span>,len(dataIndex)))<span class="comment">#go to 0 because of the constant</span></div><div class="line">            h = sigmoid(sum(dataMatrix[randIndex]*weights))</div><div class="line">            error = classLabels[randIndex] - h</div><div class="line">            weights = weights + alpha * error * dataMatrix[randIndex]</div><div class="line">            <span class="keyword">del</span>(dataIndex[randIndex])</div><div class="line">    <span class="keyword">return</span> weights</div></pre></td></tr></table></figure>
+<h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><ul>
+<li><p>基本方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradAscent</span><span class="params">(dataMatIn, classLabels)</span>:</span></div><div class="line">    dataMatrix = mat(dataMatIn)             <span class="comment">#convert to NumPy matrix</span></div><div class="line">    labelMat = mat(classLabels).transpose() <span class="comment">#convert to NumPy matrix</span></div><div class="line">    m,n = shape(dataMatrix)</div><div class="line">    alpha = <span class="number">0.001</span></div><div class="line">    maxCycles = <span class="number">500</span></div><div class="line">    weights = ones((n,<span class="number">1</span>))</div><div class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(maxCycles):              <span class="comment">#heavy on matrix operations</span></div><div class="line">        h = sigmoid(dataMatrix*weights)     <span class="comment">#matrix mult</span></div><div class="line">        error = (labelMat - h)              <span class="comment">#vector subtraction</span></div><div class="line">        weights = weights + alpha * dataMatrix.transpose()* error <span class="comment">#matrix mult</span></div><div class="line">    <span class="keyword">return</span> weights</div></pre></td></tr></table></figure>
+</li>
+<li><p>加入随机</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">stocGradAscent1</span><span class="params">(dataMatrix, classLabels, numIter=<span class="number">150</span>)</span>:</span></div><div class="line">    m,n = shape(dataMatrix)</div><div class="line">    weights = ones(n)   <span class="comment">#initialize to all ones</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(numIter):</div><div class="line">        dataIndex = range(m)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</div><div class="line">            alpha = <span class="number">4</span>/(<span class="number">1.0</span>+j+i)+<span class="number">0.0001</span>    <span class="comment">#apha decreases with iteration, does not</span></div><div class="line">            randIndex = int(random.uniform(<span class="number">0</span>,len(dataIndex)))<span class="comment">#go to 0 because of the constant</span></div><div class="line">            h = sigmoid(sum(dataMatrix[randIndex]*weights))</div><div class="line">            error = classLabels[randIndex] - h</div><div class="line">            weights = weights + alpha * error * dataMatrix[randIndex]</div><div class="line">            <span class="keyword">del</span>(dataIndex[randIndex])</div><div class="line">    <span class="keyword">return</span> weights</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
@@ -534,7 +532,7 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题引出："><span class="nav-number">1.</span> <span class="nav-text">问题引出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sigmoid函数："><span class="nav-number">2.</span> <span class="nav-text">Sigmoid函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回归系数确定："><span class="nav-number">3.</span> <span class="nav-text">回归系数确定：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度上升法"><span class="nav-number">3.0.1.</span> <span class="nav-text">梯度上升法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度上升算法推导："><span class="nav-number">3.0.2.</span> <span class="nav-text">梯度上升算法推导：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题引出："><span class="nav-number">1.</span> <span class="nav-text">问题引出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sigmoid函数："><span class="nav-number">2.</span> <span class="nav-text">Sigmoid函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回归系数确定："><span class="nav-number">3.</span> <span class="nav-text">回归系数确定：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度上升法"><span class="nav-number">3.0.1.</span> <span class="nav-text">梯度上升法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度上升算法推导："><span class="nav-number">3.0.2.</span> <span class="nav-text">梯度上升算法推导：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python实现"><span class="nav-number">4.</span> <span class="nav-text">Python实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-number">6.</span> <span class="nav-text">参考：</span></a></li></ol></div>
             
           </div>
         </section>
@@ -642,7 +640,24 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
