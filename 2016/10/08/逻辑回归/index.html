@@ -107,7 +107,7 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
 这些都可以看做是分类问题，更准确地，都可以看做是二分类问题。
 Logistic 回归类似于线性回归模型，但更适用于因变量为二分变量的模型">
 <meta property="og:image" content="http://img.bimg.126.net/photo/f0Mks6829W47XdveM6NMug==/3415698842385787951.jpg">
-<meta property="og:updated_time" content="2016-10-08T11:54:13.000Z">
+<meta property="og:updated_time" content="2016-10-08T12:10:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="逻辑回归">
 <meta name="twitter:description" content="问题引出：实际工作中，我们可能会遇到如下问题：
@@ -352,23 +352,23 @@ Logistic 回归类似于线性回归模型，但更适用于因变量为二分�
 <li>$P(y=0|x;\theta) = 1-h_\theta(x)$</li>
 </ul>
 </li>
-<li>单个样本正确预测的概率为：$P(y|x;\theta) = (h<em>\theta(x))^y(1-h</em>\theta(x))^{1-y}$</li>
+<li>单个样本正确预测的概率为：$P(y|x;\theta) = (h_\theta(x))^y(1-h_\theta(x))^{1-y}$</li>
 <li><p>最大似然估计：</p>
-<p>  $L(\theta)=p(\vec y|X;\theta)$<br>  $\ \ \ \ \ \ \ \  =\prod<em>{i=1}^mp(y^i|x^i;\theta)$<br>  $\ \ \ \ \ \ \ \  =\prod</em>{i=1}^m(h<em>\theta(x^i))^{y^i}(1-h</em>\theta(x^i))^{1-y^i}$</p>
+<p>  $L(\theta)=p(\vec y|X;\theta)$<br>  $         =\prod_{i=1}^mp(y^i|x^i;\theta)$<br>  $         =\prod_{i=1}^m(h_\theta(x^i))^{y^i}(1-h_\theta(x^i))^{1-y^i}$</p>
 </li>
-<li><p>转化： $\frac{\partial\ell(\theta)}{\partial\theta_j}=\frac{\partial\ell(\theta)}{\partial g(\theta^Tx)}<em>\frac{\partial g(\theta^Tx)}{\partial\theta^Tx}</em>\frac{\partial(\theta^Tx)}{\partial\theta_j}$</p>
+<li><p>转化：<br>  $\frac{\partial\ell(\theta)}{\partial\theta_j}=\frac{\partial\ell(\theta)}{\partial g(\theta^Tx)}<em>\frac{\partial g(\theta^Tx)}{\partial\theta^Tx}</em>\frac{\partial(\theta^Tx)}{\partial\theta_j}$</p>
 </li>
 <li><p>求解1：</p>
 <p>  $\ell(\theta)=logL(\theta)=\sum_{i=1}^my^ilogh(x^i)+(1-y^i)log(1-h(x^i))$</p>
-<p>  $\frac{\partial}{\partial g(\theta^Tx)}\ell(\theta) = \frac{\partial(y<em>log(h<em>\theta(x))+(1-y)log(1-h</em>\theta(x)))}{\partial h_\theta(x)}$<br>  $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  =y</em> \frac{1}{g(\theta^Tx)} + (1-y)<em> \frac{1}{1-g(\theta^Tx)}</em>(-1)$</p>
+<p>  $$ \frac{\partial}{\partial g(\theta^Tx)}\ell(\theta) = \frac{\partial(y<em>log(h_\theta(x))+(1-y)log(1-h_\theta(x)))}{\partial h_\theta(x)} = y</em> \frac{1}{g(\theta^Tx)} + (1-y)<em> \frac{1}{1-g(\theta^Tx)}</em>(-1)$$</p>
 </li>
 <li><p>求解2</p>
 <p>  $g^\prime(z)=\frac{d}{dz}\frac{1}{1+e^{-z}}=\frac{1}{(1+e^{-z})^2}(e^{-z})=\frac{1}{1+e^{-z}}\cdot(1-\frac{1}{1+e^{-z}})=g(z)(1-g(z))$</p>
 <p>  $\frac{\partial }{\partial\theta^Tx}g(\theta^Tx)=g(\theta^Tx)*(1-g(\theta^Tx))$</p>
 </li>
 <li>求解3<br>  $\frac{\partial}{\partial\theta_j}\theta^Tx=\frac{\partial(\theta_1x_1+\theta_2x2+\cdots+\theta_mx_m)}{\partial\theta_j}=x_j$</li>
-<li>代入进去得到：<br>  $\frac{\partial}{\partial\theta<em>j}\ell(\theta)= (y-h</em>\theta(x))x_j$</li>
-<li>梯度迭代公式为：<br>  $\theta_j := \theta<em>j + \alpha(y^i - h</em>\theta(x^i))x_j^i$</li>
+<li>代入进去得到：<br>  $\frac{\partial}{\partial\theta_j}\ell(\theta)= (y-h_\theta(x))x_j$</li>
+<li>梯度迭代公式为：<br>  $\theta_j := \theta_j + \alpha(y^i - h_\theta(x^i))x_j^i$</li>
 </ul>
 <h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><ul>
 <li><p>基本方法</p>
