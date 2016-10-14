@@ -294,8 +294,20 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python-openCV/" itemprop="url" rel="index">
-                    <span itemprop="name">Python, openCV</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/openCV/" itemprop="url" rel="index">
+                    <span itemprop="name">openCV</span>
                   </a>
                 </span>
 
@@ -328,48 +340,18 @@
 
       
         
-          
-            <h2 id="mac-机器："><a href="#mac-机器：" class="headerlink" title="mac 机器："></a>mac 机器：</h2><p>mac机器python环境比较规范，安装比较顺利，一次就安装成功</p>
+          <h2 id="mac-机器："><a href="#mac-机器：" class="headerlink" title="mac 机器："></a>mac 机器：</h2><p>mac机器python环境比较规范，安装比较顺利，一次就安装成功</p>
 <h3 id="必须软件："><a href="#必须软件：" class="headerlink" title="必须软件："></a>必须软件：</h3><ol>
 <li>python</li>
 <li>numpy</li>
 <li>cmake</li>
 </ol>
-<p>如果没有，提前安装软件，安装参考 <a href="http://blog.csdn.net/u011056389/article/details/37816067" target="_blank" rel="external">CentOS6.5上配置Python2.7+OpenCV2.4.7</a></p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><a href="http://opencv.org/downloads.html" target="_blank" rel="external">点击</a>下载opencv源代码, 并解压，进入到解压目录</li>
-<li>新建release目录（mkdir release）</li>
-<li><p>执行以下命令</p>
-<blockquote>
-<p>cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON -D BUILD_EXAMPLES=ON ..</p>
-</blockquote>
-<p> ==注意有没有报错信息，有错误一定要仔细查看==</p>
-</li>
-<li>执行：make -j8，此时注意release/lib下面是否有cv.so文件，如果没有，表示有问题，查看下具体的问题</li>
-<li>执行：make install</li>
-<li>查看python的site-package下面是否包含cv.py和cv2.so文件（在python的每个site-package目录下都查找下，目录用sys.path去查看）</li>
-<li>测试，在终端输入python打开命令行客户端，输入import cv2，如果没报错就证明安装成功了</li>
-</ol>
-<h2 id="Centos6-5安装"><a href="#Centos6-5安装" class="headerlink" title="Centos6.5安装"></a>Centos6.5安装</h2><p>服务器机器python被安装的比较乱，直接按照mac的cmake命令总是出错，最终采用指定python环境的方式去装</p>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><blockquote>
-<p>cmake -D PYTHON_EXECUTABLE=/usr/bin/python \<br>  -D PYTHON_PACKAGES_PATH=/usr/lib64/python2.6/site-packages/ \<br>  -D INSTALL_PYTHON_EXAMPLES=ON \<br>  -D PYTHON_INCLUDE_DIR=/usr/include/python2.6 \<br>  -D PYTHON_LIBRARY=/usr/lib64/libpython2.6.so \<br>  ..</p>
-</blockquote>
-<p>==看到上面命令就可以知道python的路径有多乱了==</p>
-<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><blockquote>
-<p>cmake -D PYTHON_EXECUTABLE=/usr/local/bin/python2 \<br> -D PYTHON_PACKAGES_PATH=/usr/local/python/python2/lib/python2.7/site-packages/ \<br> -D INSTALL_PYTHON_EXAMPLES=ON \<br> -D PYTHON_INCLUDE_DIR=/usr/local/python/python2/include/python2.7 \<br> -D PYTHON_LIBRARY=/usr/local/python/python2/lib/libpython2.7.a \<br>..</p>
-</blockquote>
-<p>2.6.6的library是so文件，2.7的确实libpython2.7.a,然后就有问题了……</p>
-<blockquote>
-<p>/usr/bin/ld: /usr/local/lib/libpython2.7.a(abstract.o): relocation R_X86_64_<br>32 against `a local symbol’ can not be used when making a shared object; rec<br>ompile with -fPIC<br>  /usr/local/lib/libpython2.7.a: could not read symbols: Bad value collect2: ld returned 1 exit status  </p>
-</blockquote>
-<p>解决方案可以参考： <a href="http://blog.csdn.net/zhouyongsdzh/article/details/24449645" target="_blank" rel="external">Python错误集锦</a>，由于是线上机器，怕影响其他环境，没敢尝试</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
-<li><a href="http://www.tuicool.com/articles/36fMnem" target="_blank" rel="external">CentOS6.5上配置Python2.7+OpenCV2.4.7</a></li>
-<li><a href="http://www.cnblogs.com/SEEKTHINKING/p/4142538.html" target="_blank" rel="external">【mac osx安装opencv，python总结】</a></li>
-<li><a href="http://blog.csdn.net/zhouyongsdzh/article/details/24449645" target="_blank" rel="external">Python错误集锦</a></li>
-</ol>
-
-          
+<p>如果没有，提前安装软件，安装参考 <a href="http://blog.csdn.net/u011056389/article/details/37816067">CentOS6.5上配置Python2.7+OpenCV2.4.7</a><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/14/openCV-Python-安装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -825,7 +807,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
