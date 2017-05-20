@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Opencv," />
+  <meta name="keywords" content="Python,numpy," />
 
 
 
@@ -84,34 +84,22 @@
 
 
 
-<meta name="description" content="mac 机器：mac机器python环境比较规范，安装比较顺利，一次就安装成功
-必须软件：
-python
-numpy
-cmake
-
-如果没有，提前安装软件，安装参考 CentOS6.5上配置Python2.7+OpenCV2.4.7">
+<meta name="description" content="ndarray: 多维数组对象
+shape
+dtype12345678910111213141516171819import numpy as npdata1 = [6, 7.5, 8, 0, 1]arr1 = np.array(data1)arr1            # array([ 6. ,  7.5,  8. ,  0. ,  1. ])arr1.shape      # (5,)a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="openCV + Python 安装">
-<meta property="og:url" content="http://yoursite.com/2016/10/14/openCV-Python-安装/index.html">
+<meta property="og:title" content="numpy基础知识">
+<meta property="og:url" content="http://yoursite.com/2017/05/20/numpy基础知识/index.html">
 <meta property="og:site_name" content="LmouseXu">
-<meta property="og:description" content="mac 机器：mac机器python环境比较规范，安装比较顺利，一次就安装成功
-必须软件：
-python
-numpy
-cmake
-
-如果没有，提前安装软件，安装参考 CentOS6.5上配置Python2.7+OpenCV2.4.7">
-<meta property="og:updated_time" content="2016-10-14T05:48:45.000Z">
+<meta property="og:description" content="ndarray: 多维数组对象
+shape
+dtype12345678910111213141516171819import numpy as npdata1 = [6, 7.5, 8, 0, 1]arr1 = np.array(data1)arr1            # array([ 6. ,  7.5,  8. ,  0. ,  1. ])arr1.shape      # (5,)a">
+<meta property="og:updated_time" content="2017-05-20T07:08:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="openCV + Python 安装">
-<meta name="twitter:description" content="mac 机器：mac机器python环境比较规范，安装比较顺利，一次就安装成功
-必须软件：
-python
-numpy
-cmake
-
-如果没有，提前安装软件，安装参考 CentOS6.5上配置Python2.7+OpenCV2.4.7">
+<meta name="twitter:title" content="numpy基础知识">
+<meta name="twitter:description" content="ndarray: 多维数组对象
+shape
+dtype12345678910111213141516171819import numpy as npdata1 = [6, 7.5, 8, 0, 1]arr1 = np.array(data1)arr1            # array([ 6. ,  7.5,  8. ,  0. ,  1. ])arr1.shape      # (5,)a">
 
 
 
@@ -132,10 +120,10 @@ cmake
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/14/openCV-Python-安装/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/20/numpy基础知识/"/>
 
 
-  <title> openCV + Python 安装 | LmouseXu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> numpy基础知识 | LmouseXu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -285,7 +273,7 @@ cmake
             
             
               
-                openCV + Python 安装
+                numpy基础知识
               
             
           </h1>
@@ -297,8 +285,8 @@ cmake
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T11:50:08+08:00" content="2016-10-14">
-              2016-10-14
+            <time itemprop="dateCreated" datetime="2017-05-20T15:07:13+08:00" content="2017-05-20">
+              2017-05-20
             </time>
           </span>
 
@@ -323,8 +311,8 @@ cmake
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/OpenCV/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenCV</span>
+                  <a href="/categories/Python/numpy/" itemprop="url" rel="index">
+                    <span itemprop="name">numpy</span>
                   </a>
                 </span>
 
@@ -356,46 +344,112 @@ cmake
       
 
       
-        <h2 id="mac-机器："><a href="#mac-机器：" class="headerlink" title="mac 机器："></a>mac 机器：</h2><p>mac机器python环境比较规范，安装比较顺利，一次就安装成功</p>
-<h3 id="必须软件："><a href="#必须软件：" class="headerlink" title="必须软件："></a>必须软件：</h3><ol>
-<li>python</li>
-<li>numpy</li>
-<li>cmake</li>
-</ol>
-<p>如果没有，提前安装软件，安装参考 <a href="http://blog.csdn.net/u011056389/article/details/37816067" target="_blank" rel="external">CentOS6.5上配置Python2.7+OpenCV2.4.7</a></p>
-<a id="more"></a>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><a href="http://opencv.org/downloads.html" target="_blank" rel="external">点击</a>下载opencv源代码, 并解压，进入到解压目录</li>
-<li>新建release目录（mkdir release）</li>
-<li><p>执行以下命令</p>
-<blockquote>
-<p>cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON -D BUILD_EXAMPLES=ON ..</p>
-</blockquote>
-<p> ==注意有没有报错信息，有错误一定要仔细查看==</p>
+        <ul>
+<li>ndarray: 多维数组对象<ol>
+<li>shape</li>
+<li>dtype<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">data1 = [<span class="number">6</span>, <span class="number">7.5</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">1</span>]</div><div class="line">arr1 = np.array(data1)</div><div class="line">arr1            <span class="comment"># array([ 6. ,  7.5,  8. ,  0. ,  1. ])</span></div><div class="line">arr1.shape      <span class="comment"># (5,)</span></div><div class="line">arr1.dtype      <span class="comment"># dtype('float64')</span></div><div class="line">data2 = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]]</div><div class="line">arr2 = np.array(data2)</div><div class="line">arr2.shape      <span class="comment"># (2,)</span></div><div class="line">arr2.dtype      <span class="comment"># dtype('O')</span></div><div class="line">data2 = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</div><div class="line">arr2.shape      <span class="comment"># (2,)</span></div><div class="line">arr2 = np.array(data2)</div><div class="line">arr2.shape      <span class="comment"># (2, 4)</span></div><div class="line">arr2.dtype      <span class="comment"># dtype('int64')</span></div><div class="line">arr2d = array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</div><div class="line">arr2d[<span class="number">1</span>]        <span class="comment"># array([4, 5, 6])</span></div><div class="line">arr2d[<span class="number">1</span>][<span class="number">2</span>]     <span class="comment"># 6</span></div><div class="line">arr2d[<span class="number">1</span>, <span class="number">2</span>]     <span class="comment"># 6</span></div></pre></td></tr></table></figure>
 </li>
-<li>执行：make -j8，此时注意release/lib下面是否有cv.so文件，如果没有，表示有问题，查看下具体的问题</li>
-<li>执行：make install</li>
-<li>查看python的site-package下面是否包含cv.py和cv2.so文件（在python的每个site-package目录下都查找下，目录用sys.path去查看）</li>
-<li>测试，在终端输入python打开命令行客户端，输入import cv2，如果没报错就证明安装成功了</li>
 </ol>
-<h2 id="Centos6-5安装"><a href="#Centos6-5安装" class="headerlink" title="Centos6.5安装"></a>Centos6.5安装</h2><p>服务器机器python被安装的比较乱，直接按照mac的cmake命令总是出错，最终采用指定python环境的方式去装</p>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><blockquote>
-<p>cmake -D PYTHON_EXECUTABLE=/usr/bin/python \<br>  -D PYTHON_PACKAGES_PATH=/usr/lib64/python2.6/site-packages/ \<br>  -D INSTALL_PYTHON_EXAMPLES=ON \<br>  -D PYTHON_INCLUDE_DIR=/usr/include/python2.6 \<br>  -D PYTHON_LIBRARY=/usr/lib64/libpython2.6.so \<br>  ..</p>
-</blockquote>
-<p>==看到上面命令就可以知道python的路径有多乱了==</p>
-<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><blockquote>
-<p>cmake -D PYTHON_EXECUTABLE=/usr/local/bin/python2 \<br> -D PYTHON_PACKAGES_PATH=/usr/local/python/python2/lib/python2.7/site-packages/ \<br> -D INSTALL_PYTHON_EXAMPLES=ON \<br> -D PYTHON_INCLUDE_DIR=/usr/local/python/python2/include/python2.7 \<br> -D PYTHON_LIBRARY=/usr/local/python/python2/lib/libpython2.7.a \<br>..</p>
-</blockquote>
-<p>2.6.6的library是so文件，2.7的确实libpython2.7.a,然后就有问题了……</p>
-<blockquote>
-<p>/usr/bin/ld: /usr/local/lib/libpython2.7.a(abstract.o): relocation R_X86_64_<br>32 against `a local symbol’ can not be used when making a shared object; rec<br>ompile with -fPIC<br>  /usr/local/lib/libpython2.7.a: could not read symbols: Bad value collect2: ld returned 1 exit status  </p>
-</blockquote>
-<p>解决方案可以参考： <a href="http://blog.csdn.net/zhouyongsdzh/article/details/24449645" target="_blank" rel="external">Python错误集锦</a>，由于是线上机器，怕影响其他环境，没敢尝试</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
-<li><a href="http://www.tuicool.com/articles/36fMnem" target="_blank" rel="external">CentOS6.5上配置Python2.7+OpenCV2.4.7</a></li>
-<li><a href="http://www.cnblogs.com/SEEKTHINKING/p/4142538.html" target="_blank" rel="external">【mac osx安装opencv，python总结】</a></li>
-<li><a href="http://blog.csdn.net/zhouyongsdzh/article/details/24449645" target="_blank" rel="external">Python错误集锦</a></li>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>array</td>
+<td>将输入数据（List，tuple, array或其他类型）转换为ndarray)</td>
+</tr>
+<tr>
+<td>asarray</td>
+<td>将输入转换为ndarray，如果本身就是ndarray则不进行复制</td>
+</tr>
+<tr>
+<td>zeros, zeros_like</td>
+<td>array([ 0.,  0.,  0.])</td>
+</tr>
+<tr>
+<td>empty, empty_like</td>
+<td>array([  2.13525654e-314,   2.13525654e-314,   2.14480970e-314])</td>
+</tr>
+<tr>
+<td>ones, ones_like</td>
+<td>array([ 1.,  1.,  1.])</td>
+</tr>
+<tr>
+<td>arange</td>
+<td>array([0, 1, 2])</td>
+</tr>
+<tr>
+<td>eye, identity</td>
+<td>创建一个 N*N 单位矩阵</td>
+</tr>
+</tbody>
+</table>
+<h3 id="索引和切片"><a href="#索引和切片" class="headerlink" title="索引和切片"></a>索引和切片</h3><h4 id="1-布尔值索引"><a href="#1-布尔值索引" class="headerlink" title="1. 布尔值索引"></a>1. 布尔值索引</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">names = array([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</div><div class="line">data = randn(<span class="number">4</span>, <span class="number">4</span>)</div><div class="line">data = random.randn(<span class="number">4</span>, <span class="number">4</span>)</div><div class="line">array([[<span class="number">-0.54660942</span>,  <span class="number">1.30071793</span>,  <span class="number">0.95622017</span>,  <span class="number">1.03988764</span>],</div><div class="line">       [<span class="number">-0.52632133</span>, <span class="number">-0.10713892</span>,  <span class="number">1.10003823</span>,  <span class="number">1.17846867</span>],</div><div class="line">       [<span class="number">-1.37124867</span>, <span class="number">-0.40777082</span>, <span class="number">-1.01849388</span>, <span class="number">-0.07238181</span>],</div><div class="line">       [ <span class="number">0.81121173</span>,  <span class="number">0.33523721</span>, <span class="number">-1.02636928</span>, <span class="number">-0.46348166</span>]])</div><div class="line">names == <span class="string">'b'</span>        <span class="comment"># array([False,  True, False, False], dtype=bool)</span></div><div class="line">data[names == <span class="string">'b'</span>]  <span class="comment"># array([[-0.52632133, -0.10713892,  1.10003823,  1.17846867]])</span></div><div class="line">data[-(names == <span class="string">'b'</span>)] <span class="comment"># data[names != 'b']</span></div><div class="line">array([[<span class="number">-0.54660942</span>,  <span class="number">1.30071793</span>,  <span class="number">0.95622017</span>,  <span class="number">1.03988764</span>],</div><div class="line">       [<span class="number">-1.37124867</span>, <span class="number">-0.40777082</span>, <span class="number">-1.01849388</span>, <span class="number">-0.07238181</span>],</div><div class="line">       [ <span class="number">0.81121173</span>,  <span class="number">0.33523721</span>, <span class="number">-1.02636928</span>, <span class="number">-0.46348166</span>]])</div></pre></td></tr></table></figure>
+<h3 id="数组数据保存"><a href="#数组数据保存" class="headerlink" title="数组数据保存"></a>数组数据保存</h3><ol>
+<li>save(filename, ndarry), filename默认增加扩展名.npy</li>
+<li>savez(filename, a=arr1, b=arr2), 按照key读取数据</li>
+<li>load(filename)</li>
 </ol>
+<h2 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>diag</td>
+<td></td>
+</tr>
+<tr>
+<td>dot</td>
+<td></td>
+</tr>
+<tr>
+<td>trace</td>
+<td></td>
+</tr>
+<tr>
+<td>det</td>
+<td></td>
+</tr>
+<tr>
+<td>eig</td>
+<td></td>
+</tr>
+<tr>
+<td>inv</td>
+<td></td>
+</tr>
+<tr>
+<td>pinv</td>
+<td></td>
+</tr>
+<tr>
+<td>qr</td>
+<td></td>
+</tr>
+<tr>
+<td>svd</td>
+<td></td>
+</tr>
+<tr>
+<td>solve</td>
+<td></td>
+</tr>
+<tr>
+<td>lstsq</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -420,7 +474,7 @@ cmake
           
             <a href="/tags/Python/" rel="tag">#Python</a>
           
-            <a href="/tags/Opencv/" rel="tag">#Opencv</a>
+            <a href="/tags/numpy/" rel="tag">#numpy</a>
           
         </div>
       
@@ -429,17 +483,13 @@ cmake
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/09/决策树-Decision-Tree/" rel="next" title="决策树(Decision Tree)">
-                <i class="fa fa-chevron-left"></i> 决策树(Decision Tree)
+              <a href="/2017/05/20/pandas入门/" rel="next" title="pandas入门">
+                <i class="fa fa-chevron-left"></i> pandas入门
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/03/Spring学习笔记-IOC/" rel="prev" title="Spring学习笔记-IoC">
-                Spring学习笔记-IoC <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +603,7 @@ cmake
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mac-机器："><span class="nav-number">1.</span> <span class="nav-text">mac 机器：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#必须软件："><span class="nav-number">1.1.</span> <span class="nav-text">必须软件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">1.2.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Centos6-5安装"><span class="nav-number">2.</span> <span class="nav-text">Centos6.5安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.1.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误"><span class="nav-number">2.2.</span> <span class="nav-text">错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引和切片"><span class="nav-number">1.</span> <span class="nav-text">索引和切片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-布尔值索引"><span class="nav-number">1.1.</span> <span class="nav-text">1. 布尔值索引</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组数据保存"><span class="nav-number">2.</span> <span class="nav-text">数组数据保存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性代数"><span class="nav-number"></span> <span class="nav-text">线性代数</span></a></div>
             
           </div>
         </section>
