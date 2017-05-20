@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,pandas," />
 
 
 
@@ -84,12 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="LmouseXu">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="SeriesSeries是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成123456789101112131415161718&amp;gt;&amp;gt;&amp;gt; obj = Series([4, 7, -5, 3])&amp;gt;&amp;gt;&amp;gt; obj0    41    72   -53    3dtype: int64&amp;gt;&amp;gt;&amp;gt; obj.valuesarray([">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pandas入门">
+<meta property="og:url" content="http://yoursite.com/2017/05/20/pandas入门/index.html">
 <meta property="og:site_name" content="LmouseXu">
+<meta property="og:description" content="SeriesSeries是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成123456789101112131415161718&amp;gt;&amp;gt;&amp;gt; obj = Series([4, 7, -5, 3])&amp;gt;&amp;gt;&amp;gt; obj0    41    72   -53    3dtype: int64&amp;gt;&amp;gt;&amp;gt; obj.valuesarray([">
+<meta property="og:updated_time" content="2017-05-20T07:05:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LmouseXu">
+<meta name="twitter:title" content="pandas入门">
+<meta name="twitter:description" content="SeriesSeries是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成123456789101112131415161718&amp;gt;&amp;gt;&amp;gt; obj = Series([4, 7, -5, 3])&amp;gt;&amp;gt;&amp;gt; obj0    41    72   -53    3dtype: int64&amp;gt;&amp;gt;&amp;gt; obj.valuesarray([">
 
 
 
@@ -110,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/20/pandas入门/"/>
 
 
-  <title> LmouseXu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> pandas入门 | LmouseXu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -134,9 +138,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -243,9 +245,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -265,10 +267,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/05/20/pandas入门/" itemprop="url">
-                  pandas入门
-                </a>
+                pandas入门
               
             
           </h1>
@@ -339,9 +338,7 @@
       
 
       
-        
-          
-            <h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><p>Series是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj</div><div class="line"><span class="number">0</span>    <span class="number">4</span></div><div class="line"><span class="number">1</span>    <span class="number">7</span></div><div class="line"><span class="number">2</span>   <span class="number">-5</span></div><div class="line"><span class="number">3</span>    <span class="number">3</span></div><div class="line">dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.values</div><div class="line">array([ <span class="number">4</span>,  <span class="number">7</span>, <span class="number">-5</span>,  <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.index</div><div class="line">Int64Index([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], dtype=<span class="string">'int64'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2 = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>], index=[<span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2</div><div class="line">d    <span class="number">4</span></div><div class="line">b    <span class="number">7</span></div><div class="line">a   <span class="number">-5</span></div><div class="line">c    <span class="number">3</span></div><div class="line">dtype: int64</div></pre></td></tr></table></figure></p>
+        <h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><p>Series是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj</div><div class="line"><span class="number">0</span>    <span class="number">4</span></div><div class="line"><span class="number">1</span>    <span class="number">7</span></div><div class="line"><span class="number">2</span>   <span class="number">-5</span></div><div class="line"><span class="number">3</span>    <span class="number">3</span></div><div class="line">dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.values</div><div class="line">array([ <span class="number">4</span>,  <span class="number">7</span>, <span class="number">-5</span>,  <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.index</div><div class="line">Int64Index([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], dtype=<span class="string">'int64'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2 = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>], index=[<span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2</div><div class="line">d    <span class="number">4</span></div><div class="line">b    <span class="number">7</span></div><div class="line">a   <span class="number">-5</span></div><div class="line">c    <span class="number">3</span></div><div class="line">dtype: int64</div></pre></td></tr></table></figure></p>
 <h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><blockquote>
 <p>表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型；DataFrame既有行索引也有列索引，可以被看做是Series组成的字典。</p>
 </blockquote>
@@ -544,552 +541,61 @@
 <li>limit： 可以连续填充的最大数量</li>
 </ol>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/03/Spring学习笔记-AOP/" itemprop="url">
-                  Spring学习笔记-AOP
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-03T17:13:20+08:00" content="2016-12-03">
-              2016-12-03
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/Spring/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/pandas/" rel="tag">#pandas</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>注：面向切面编程（Aspect Oriented Programming）</p>
-<h3 id="为什么使用切面"><a href="#为什么使用切面" class="headerlink" title="为什么使用切面"></a>为什么使用切面</h3><p>我们软件开发时经常提一个词叫做“业务逻辑”或者“业务功能”，我们的代码主要就是实现某种特定的业务逻辑。但是我们往往不能专注于业务逻辑，比如我们写业务逻辑代码的同时，还要写事务管理、缓存、日志等等通用化的功能，而且每个业务功能都要和这些业务功能混在一起，痛苦！所以，为了将业务功能的关注点和通用化功能的关注点分离开来，就出现了AOP技术。这些通用化功能的代码实现，对应的就是我们说的切面（Aspect）。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/03/Spring学习笔记-AOP/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/03/Spring学习笔记-AOP/" rel="next" title="Spring学习笔记-AOP">
+                <i class="fa fa-chevron-left"></i> Spring学习笔记-AOP
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/03/Spring学习笔记-IOC/" itemprop="url">
-                  Spring学习笔记-IoC
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-03T17:09:24+08:00" content="2016-12-03">
-              2016-12-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/Spring/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="IoC"><a href="#IoC" class="headerlink" title="IoC"></a>IoC</h2><p>控制反转IoC(Inversion of Control)，是一种设计思想，DI(依赖注入)是实现IoC的一种方法，也有人认为DI只是IoC的另一种说法。没有IoC的程序中我们使用面向对象编程对象的创建与对象间的依赖关系完全硬编码在程序中，对象的创建由程序自己控制，控制反转后将对象的创建转移给第三方，个人认为所谓控制反转就是：获得依赖对象的方式反转了。<br><img src="http://images2015.cnblogs.com/blog/63651/201607/63651-20160728142834684-1607425123.png" alt="image"><br>应用控制反转后，当对象被创建时，由一个调控系统内的所有对象的外界实体将其所依赖的引用传递给它，即依赖被注入到对象中。所以，控制反转是冠以一个对象如何获取它所依赖的对象的引用，在这里，反转指的是责任的反转。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/03/Spring学习笔记-IOC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/14/openCV-Python-安装/" itemprop="url">
-                  openCV + Python 安装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T11:50:08+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/OpenCV/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenCV</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="mac-机器："><a href="#mac-机器：" class="headerlink" title="mac 机器："></a>mac 机器：</h2><p>mac机器python环境比较规范，安装比较顺利，一次就安装成功</p>
-<h3 id="必须软件："><a href="#必须软件：" class="headerlink" title="必须软件："></a>必须软件：</h3><ol>
-<li>python</li>
-<li>numpy</li>
-<li>cmake</li>
-</ol>
-<p>如果没有，提前安装软件，安装参考 <a href="http://blog.csdn.net/u011056389/article/details/37816067">CentOS6.5上配置Python2.7+OpenCV2.4.7</a></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/14/openCV-Python-安装/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/09/决策树-Decision-Tree/" itemprop="url">
-                  决策树(Decision Tree)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-09T16:25:39+08:00" content="2016-10-09">
-              2016-10-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ML/" itemprop="url" rel="index">
-                    <span itemprop="name">ML</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="基础概念："><a href="#基础概念：" class="headerlink" title="基础概念："></a>基础概念：</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
-<li>分类决策树模型是一种描述对实例进行分类的树形结构</li>
-<li>由结点（node）和有向边组成。</li>
-<li>结点：<ul>
-<li>内部结点(internal node)：表示一个特征或属性</li>
-<li>叶结点(leaf node)：表示一个类。</li>
-</ul>
-</li>
-</ul>
-<p>&emsp;&emsp; 用决策树分类，从根结点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子结点；此时，每一个子结点对应着该特征的一个取值。如此递归地对实例进行测试并分配，直至达到叶结点。最后将实例分到叶结点的类中。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/09/决策树-Decision-Tree/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -1097,6 +603,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1116,8 +626,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -1167,6 +686,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">1.</span> <span class="nav-text">Series</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">2.1.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-重新索引"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 重新索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除索引"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 删除索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-索引、选取和过滤"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 索引、选取和过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-算术运算和数据对齐"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 算术运算和数据对齐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-函数运算"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. 函数运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-排序与排名"><span class="nav-number">2.1.6.</span> <span class="nav-text">6. 排序与排名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-有重复值的索引"><span class="nav-number">2.1.7.</span> <span class="nav-text">7. 有重复值的索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计计算"><span class="nav-number">3.</span> <span class="nav-text">统计计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理缺失数据"><span class="nav-number">4.</span> <span class="nav-text">处理缺失数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dropna方法"><span class="nav-number">4.1.</span> <span class="nav-text">dropna方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fillna"><span class="nav-number">4.2.</span> <span class="nav-text">fillna</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">4.2.1.</span> <span class="nav-text">参数</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1263,6 +793,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
