@@ -306,8 +306,8 @@
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/numpy/" itemprop="url" rel="index">
-                    <span itemprop="name">numpy</span>
+                  <a href="/categories/Python/NumPy/" itemprop="url" rel="index">
+                    <span itemprop="name">NumPy</span>
                   </a>
                 </span>
 
@@ -340,115 +340,12 @@
 
       
         
-          
-            <ul>
-<li>ndarray: 多维数组对象<ol>
-<li>shape</li>
-<li>dtype<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">data1 = [<span class="number">6</span>, <span class="number">7.5</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">1</span>]</div><div class="line">arr1 = np.array(data1)</div><div class="line">arr1            <span class="comment"># array([ 6. ,  7.5,  8. ,  0. ,  1. ])</span></div><div class="line">arr1.shape      <span class="comment"># (5,)</span></div><div class="line">arr1.dtype      <span class="comment"># dtype('float64')</span></div><div class="line">data2 = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]]</div><div class="line">arr2 = np.array(data2)</div><div class="line">arr2.shape      <span class="comment"># (2,)</span></div><div class="line">arr2.dtype      <span class="comment"># dtype('O')</span></div><div class="line">data2 = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</div><div class="line">arr2.shape      <span class="comment"># (2,)</span></div><div class="line">arr2 = np.array(data2)</div><div class="line">arr2.shape      <span class="comment"># (2, 4)</span></div><div class="line">arr2.dtype      <span class="comment"># dtype('int64')</span></div><div class="line">arr2d = array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</div><div class="line">arr2d[<span class="number">1</span>]        <span class="comment"># array([4, 5, 6])</span></div><div class="line">arr2d[<span class="number">1</span>][<span class="number">2</span>]     <span class="comment"># 6</span></div><div class="line">arr2d[<span class="number">1</span>, <span class="number">2</span>]     <span class="comment"># 6</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>array</td>
-<td>将输入数据（List，tuple, array或其他类型）转换为ndarray)</td>
-</tr>
-<tr>
-<td>asarray</td>
-<td>将输入转换为ndarray，如果本身就是ndarray则不进行复制</td>
-</tr>
-<tr>
-<td>zeros, zeros_like</td>
-<td>array([ 0.,  0.,  0.])</td>
-</tr>
-<tr>
-<td>empty, empty_like</td>
-<td>array([  2.13525654e-314,   2.13525654e-314,   2.14480970e-314])</td>
-</tr>
-<tr>
-<td>ones, ones_like</td>
-<td>array([ 1.,  1.,  1.])</td>
-</tr>
-<tr>
-<td>arange</td>
-<td>array([0, 1, 2])</td>
-</tr>
-<tr>
-<td>eye, identity</td>
-<td>创建一个 N*N 单位矩阵</td>
-</tr>
-</tbody>
-</table>
-<h3 id="索引和切片"><a href="#索引和切片" class="headerlink" title="索引和切片"></a>索引和切片</h3><h4 id="1-布尔值索引"><a href="#1-布尔值索引" class="headerlink" title="1. 布尔值索引"></a>1. 布尔值索引</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">names = array([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</div><div class="line">data = randn(<span class="number">4</span>, <span class="number">4</span>)</div><div class="line">data = random.randn(<span class="number">4</span>, <span class="number">4</span>)</div><div class="line">array([[<span class="number">-0.54660942</span>,  <span class="number">1.30071793</span>,  <span class="number">0.95622017</span>,  <span class="number">1.03988764</span>],</div><div class="line">       [<span class="number">-0.52632133</span>, <span class="number">-0.10713892</span>,  <span class="number">1.10003823</span>,  <span class="number">1.17846867</span>],</div><div class="line">       [<span class="number">-1.37124867</span>, <span class="number">-0.40777082</span>, <span class="number">-1.01849388</span>, <span class="number">-0.07238181</span>],</div><div class="line">       [ <span class="number">0.81121173</span>,  <span class="number">0.33523721</span>, <span class="number">-1.02636928</span>, <span class="number">-0.46348166</span>]])</div><div class="line">names == <span class="string">'b'</span>        <span class="comment"># array([False,  True, False, False], dtype=bool)</span></div><div class="line">data[names == <span class="string">'b'</span>]  <span class="comment"># array([[-0.52632133, -0.10713892,  1.10003823,  1.17846867]])</span></div><div class="line">data[-(names == <span class="string">'b'</span>)] <span class="comment"># data[names != 'b']</span></div><div class="line">array([[<span class="number">-0.54660942</span>,  <span class="number">1.30071793</span>,  <span class="number">0.95622017</span>,  <span class="number">1.03988764</span>],</div><div class="line">       [<span class="number">-1.37124867</span>, <span class="number">-0.40777082</span>, <span class="number">-1.01849388</span>, <span class="number">-0.07238181</span>],</div><div class="line">       [ <span class="number">0.81121173</span>,  <span class="number">0.33523721</span>, <span class="number">-1.02636928</span>, <span class="number">-0.46348166</span>]])</div></pre></td></tr></table></figure>
-<h3 id="数组数据保存"><a href="#数组数据保存" class="headerlink" title="数组数据保存"></a>数组数据保存</h3><ol>
-<li>save(filename, ndarry), filename默认增加扩展名.npy</li>
-<li>savez(filename, a=arr1, b=arr2), 按照key读取数据</li>
-<li>load(filename)</li>
-</ol>
-<h2 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>diag</td>
-<td></td>
-</tr>
-<tr>
-<td>dot</td>
-<td></td>
-</tr>
-<tr>
-<td>trace</td>
-<td></td>
-</tr>
-<tr>
-<td>det</td>
-<td></td>
-</tr>
-<tr>
-<td>eig</td>
-<td></td>
-</tr>
-<tr>
-<td>inv</td>
-<td></td>
-</tr>
-<tr>
-<td>pinv</td>
-<td></td>
-</tr>
-<tr>
-<td>qr</td>
-<td></td>
-</tr>
-<tr>
-<td>svd</td>
-<td></td>
-</tr>
-<tr>
-<td>solve</td>
-<td></td>
-</tr>
-<tr>
-<td>lstsq</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-          
+          <p>Numpy(Numerical Python简称)是高性能科学计算和数据分析的基础包。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/20/numpy基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -570,211 +467,12 @@
 
       
         
-          
-            <h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><p>Series是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj</div><div class="line"><span class="number">0</span>    <span class="number">4</span></div><div class="line"><span class="number">1</span>    <span class="number">7</span></div><div class="line"><span class="number">2</span>   <span class="number">-5</span></div><div class="line"><span class="number">3</span>    <span class="number">3</span></div><div class="line">dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.values</div><div class="line">array([ <span class="number">4</span>,  <span class="number">7</span>, <span class="number">-5</span>,  <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.index</div><div class="line">Int64Index([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], dtype=<span class="string">'int64'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2 = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>], index=[<span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2</div><div class="line">d    <span class="number">4</span></div><div class="line">b    <span class="number">7</span></div><div class="line">a   <span class="number">-5</span></div><div class="line">c    <span class="number">3</span></div><div class="line">dtype: int64</div></pre></td></tr></table></figure></p>
-<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><blockquote>
-<p>表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型；DataFrame既有行索引也有列索引，可以被看做是Series组成的字典。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = &#123;<span class="string">'state'</span>: [<span class="string">'a'</span>, <span class="string">'b'</span>], <span class="string">'year'</span>: [<span class="number">2000</span>, <span class="number">2001</span>], <span class="string">'pop'</span>: [<span class="number">1.5</span>, <span class="number">1.7</span>]&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>frame = DataFrame(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>frame</div><div class="line">   pop state  year</div><div class="line"><span class="number">0</span>  <span class="number">1.5</span>     a  <span class="number">2000</span></div><div class="line"><span class="number">1</span>  <span class="number">1.7</span>     b  <span class="number">2001</span></div></pre></td></tr></table></figure>
-<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><h4 id="1-重新索引"><a href="#1-重新索引" class="headerlink" title="1. 重新索引"></a>1. 重新索引</h4><p>方法： reindex(new_index, fill_value=?, method=”, …)</p>
-<p>参数列表：</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>index</td>
-<td>用作索引的新序列</td>
-</tr>
-<tr>
-<td>method</td>
-<td>填充方法，参看下表</td>
-</tr>
-<tr>
-<td>fill_value</td>
-<td>重新索引时，填充值</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>最大填充量</td>
-</tr>
-<tr>
-<td>level</td>
-<td>在MultiIndex的指定级别上匹配简单索引，否则选择其子集</td>
-</tr>
-<tr>
-<td>copy</td>
-<td>默认是True，无论如何都复制；如果为False，相同值不再复制</td>
-</tr>
-</tbody>
-</table>
-<p>method方法：</p>
-<ul>
-<li>ffill | pad： 前向填充（或搬运）值</li>
-<li>bfill | backfill: 后向填充（或搬运）值</li>
-</ul>
-<h4 id="2-删除索引"><a href="#2-删除索引" class="headerlink" title="2. 删除索引"></a>2. 删除索引</h4><p>drop()</p>
-<h4 id="3-索引、选取和过滤"><a href="#3-索引、选取和过滤" class="headerlink" title="3. 索引、选取和过滤"></a>3. 索引、选取和过滤</h4><p>可以用索引、下标，切片（末端是包含的）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = DataFrame(arange(<span class="number">16</span>).reshape((<span class="number">4</span>, <span class="number">4</span>)), index =[<span class="string">'Ohio'</span>, <span class="string">'Colorado'</span>, <span class="string">'Utash'</span>, <span class="string">'New York'</span>], columns = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data</div><div class="line">          one  two  three  four</div><div class="line">Ohio        <span class="number">0</span>    <span class="number">1</span>      <span class="number">2</span>     <span class="number">3</span></div><div class="line">Colorado    <span class="number">4</span>    <span class="number">5</span>      <span class="number">6</span>     <span class="number">7</span></div><div class="line">Utash       <span class="number">8</span>    <span class="number">9</span>     <span class="number">10</span>    <span class="number">11</span></div><div class="line">New York   <span class="number">12</span>   <span class="number">13</span>     <span class="number">14</span>    <span class="number">15</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data.ix[<span class="string">'Ohio'</span>]  <span class="comment">#obj.ix[val] 选取单行或多行</span></div><div class="line">one      <span class="number">0</span></div><div class="line">two      <span class="number">1</span></div><div class="line">three    <span class="number">2</span></div><div class="line">four     <span class="number">3</span></div><div class="line">Name: Ohio, dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data.ix[[<span class="string">'Ohio'</span>, <span class="string">'Utash'</span>]]</div><div class="line">       one  two  three  four</div><div class="line">Ohio     <span class="number">0</span>    <span class="number">1</span>      <span class="number">2</span>     <span class="number">3</span></div><div class="line">Utash    <span class="number">8</span>    <span class="number">9</span>     <span class="number">10</span>    <span class="number">11</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data[<span class="string">'one'</span>] <span class="comment">#obj[val] 选取单列或多列</span></div><div class="line">Ohio         <span class="number">0</span></div><div class="line">Colorado     <span class="number">4</span></div><div class="line">Utash        <span class="number">8</span></div><div class="line">New York    <span class="number">12</span></div><div class="line">Name: one, dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data[[<span class="string">'one'</span>, <span class="string">'two'</span>]]</div><div class="line">          one  two</div><div class="line">Ohio        <span class="number">0</span>    <span class="number">1</span></div><div class="line">Colorado    <span class="number">4</span>    <span class="number">5</span></div><div class="line">Utash       <span class="number">8</span>    <span class="number">9</span></div><div class="line">New York   <span class="number">12</span>   <span class="number">13</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data.ix[<span class="string">'Ohio'</span>, <span class="string">'two'</span>] <span class="comment"># 选取指定位置数据</span></div><div class="line"><span class="number">1</span></div></pre></td></tr></table></figure></p>
-<h4 id="4-算术运算和数据对齐"><a href="#4-算术运算和数据对齐" class="headerlink" title="4. 算术运算和数据对齐"></a>4. 算术运算和数据对齐</h4><p>pandas最重要的一个功能就是可以对不同索引的对象进行算术运算。</p>
-<p>在将对象相加时，如果存在不同的索引对，则结果的索引就是该索引对的并集。</p>
-<p>运算方法： </p>
-<ol>
-<li>add; sub; div; mul, 例：obj1.add(obj2, fill_value=0)</li>
-<li>可以在调用上述方法时指定默认值，也可以得到结果后重新使用reindex填充数据</li>
-</ol>
-<h4 id="5-函数运算"><a href="#5-函数运算" class="headerlink" title="5. 函数运算"></a>5. 函数运算</h4><ol>
-<li>apply</li>
-<li>applymap</li>
-</ol>
-<h4 id="6-排序与排名"><a href="#6-排序与排名" class="headerlink" title="6. 排序与排名"></a>6. 排序与排名</h4><ol>
-<li>排序：对行或者列索引进行排序， <ul>
-<li>sort_index(axis=1, ascending=False, by=’index’, )</li>
-</ul>
-</li>
-<li>排名：对数据继续排名，返回的排名的值<ul>
-<li>rand(ascening=False, method=)</li>
-<li>method: [‘max’, ‘min’, ‘first’, ‘averange’], 排名时用于破坏平级关系的选项</li>
-</ul>
-</li>
-</ol>
-<h4 id="7-有重复值的索引"><a href="#7-有重复值的索引" class="headerlink" title="7. 有重复值的索引"></a>7. 有重复值的索引</h4><p>取值： obj.index.is_unique<br>查找：重复索引查询，获得多行内容</p>
-<h2 id="统计计算"><a href="#统计计算" class="headerlink" title="统计计算"></a>统计计算</h2><p>pandas 拥有一组常用的数学和统计方法，用户从Series中提取单个值（sum/mean）或从DataFrame的行或列中提取一个Series。</p>
-<p>统计方法</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>count</td>
-<td>非NA值的数量</td>
-</tr>
-<tr>
-<td>describe</td>
-<td>针对列计算汇总数据</td>
-</tr>
-<tr>
-<td>min/max</td>
-<td>最小值（最大值）</td>
-</tr>
-<tr>
-<td>argmin、argmax</td>
-<td>最小值（最大值）的索引位置</td>
-</tr>
-<tr>
-<td>idxmin、idxmax</td>
-<td>最小值（最大值）的索引值</td>
-</tr>
-<tr>
-<td>quantile</td>
-<td>样本的分位数（0-1）</td>
-</tr>
-<tr>
-<td>sum</td>
-<td>求和</td>
-</tr>
-<tr>
-<td>mean</td>
-<td>平均数</td>
-</tr>
-<tr>
-<td>meidan</td>
-<td>中位数</td>
-</tr>
-<tr>
-<td>mad</td>
-<td>根据平均值计算平均绝对离差</td>
-</tr>
-<tr>
-<td>var</td>
-<td>样本值的方差</td>
-</tr>
-<tr>
-<td>std</td>
-<td>样本值的标准差</td>
-</tr>
-<tr>
-<td>skew</td>
-<td>偏度（三阶矩）</td>
-</tr>
-<tr>
-<td>kurt</td>
-<td>峰度（四阶矩）</td>
-</tr>
-<tr>
-<td>cumsum</td>
-<td>累计和</td>
-</tr>
-<tr>
-<td>cummin、cummax</td>
-<td>累计最大值和累计最小值</td>
-</tr>
-<tr>
-<td>cumprod</td>
-<td>累计积</td>
-</tr>
-<tr>
-<td>diff</td>
-<td>计算一阶差分</td>
-</tr>
-<tr>
-<td>pct_change</td>
-<td>计算百分数变化</td>
-</tr>
-</tbody>
-</table>
-<h2 id="处理缺失数据"><a href="#处理缺失数据" class="headerlink" title="处理缺失数据"></a>处理缺失数据</h2><p>pandas的设计目标之一就是让缺失数据的处理任务尽量轻松</p>
-<p>NA处理方法</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>dropna</td>
-<td>根据各标签的值中是否存在缺失数据对轴标签进行过滤，可通过阈值调节对缺失值的容忍度</td>
-</tr>
-<tr>
-<td>fillna</td>
-<td>用指定值或差值方法填充缺失数据</td>
-</tr>
-<tr>
-<td>isnull</td>
-<td>返回一个布尔值对象</td>
-</tr>
-<tr>
-<td>notnull</td>
-<td>isnull的否定式</td>
-</tr>
-</tbody>
-</table>
-<h3 id="dropna方法"><a href="#dropna方法" class="headerlink" title="dropna方法"></a>dropna方法</h3><ol>
-<li>how=’all’: 只丢弃群为NA的行</li>
-<li>thresh=2: 过滤count&lt;thresh的行</li>
-</ol>
-<h3 id="fillna"><a href="#fillna" class="headerlink" title="fillna"></a>fillna</h3><ol>
-<li>df.fillna(0): 填充指定值</li>
-<li>df.fillna({1:0.5, 3:-1}): 指定不同列不同填充值</li>
-</ol>
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ol>
-<li>value：用于填充的标量值或者字典对象</li>
-<li>method：插值方式</li>
-<li>axis：填充的轴，默认是0</li>
-<li>inplace：修改调用者对象而不产生副本</li>
-<li>limit： 可以连续填充的最大数量</li>
-</ol>
-
-          
+          <p>pandas 是基于NumPy构建的，一个开源的数据结构化和分析工具。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/20/pandas入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1242,7 +940,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1251,7 +949,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
