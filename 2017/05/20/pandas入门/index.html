@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/20/pandas入门/index.html">
 <meta property="og:site_name" content="LmouseXu">
 <meta property="og:description" content="pandas 是基于NumPy构建的，一个开源的数据结构化和分析工具。">
-<meta property="og:updated_time" content="2017-05-22T07:51:40.000Z">
+<meta property="og:updated_time" content="2017-05-24T07:17:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas入门">
 <meta name="twitter:description" content="pandas 是基于NumPy构建的，一个开源的数据结构化和分析工具。">
@@ -340,11 +340,60 @@
       
         <p>pandas 是基于NumPy构建的，一个开源的数据结构化和分析工具。</p>
 <a id="more"></a>
-<h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><p>Series是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj</div><div class="line"><span class="number">0</span>    <span class="number">4</span></div><div class="line"><span class="number">1</span>    <span class="number">7</span></div><div class="line"><span class="number">2</span>   <span class="number">-5</span></div><div class="line"><span class="number">3</span>    <span class="number">3</span></div><div class="line">dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.values</div><div class="line">array([ <span class="number">4</span>,  <span class="number">7</span>, <span class="number">-5</span>,  <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.index</div><div class="line">Int64Index([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], dtype=<span class="string">'int64'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2 = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>], index=[<span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2</div><div class="line">d    <span class="number">4</span></div><div class="line">b    <span class="number">7</span></div><div class="line">a   <span class="number">-5</span></div><div class="line">c    <span class="number">3</span></div><div class="line">dtype: int64</div></pre></td></tr></table></figure></p>
-<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><blockquote>
-<p>表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型；DataFrame既有行索引也有列索引，可以被看做是Series组成的字典。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = &#123;<span class="string">'state'</span>: [<span class="string">'a'</span>, <span class="string">'b'</span>], <span class="string">'year'</span>: [<span class="number">2000</span>, <span class="number">2001</span>], <span class="string">'pop'</span>: [<span class="number">1.5</span>, <span class="number">1.7</span>]&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>frame = DataFrame(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>frame</div><div class="line">   pop state  year</div><div class="line"><span class="number">0</span>  <span class="number">1.5</span>     a  <span class="number">2000</span></div><div class="line"><span class="number">1</span>  <span class="number">1.7</span>     b  <span class="number">2001</span></div></pre></td></tr></table></figure>
+<h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><h3 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h3><p>Series是一种类似于一维数组的对象，它由一组数据以及一组与之相关的数据标签（索引）组成，索引在左边，值在右边，默认索引为0到N-1的整数型索引。</p>
+<h3 id="使用方法示例"><a href="#使用方法示例" class="headerlink" title="使用方法示例"></a>使用方法示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj</div><div class="line"><span class="number">0</span>    <span class="number">4</span></div><div class="line"><span class="number">1</span>    <span class="number">7</span></div><div class="line"><span class="number">2</span>   <span class="number">-5</span></div><div class="line"><span class="number">3</span>    <span class="number">3</span></div><div class="line">dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.values</div><div class="line">array([ <span class="number">4</span>,  <span class="number">7</span>, <span class="number">-5</span>,  <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj.index</div><div class="line">Int64Index([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], dtype=<span class="string">'int64'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2 = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>], index=[<span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2</div><div class="line">d    <span class="number">4</span></div><div class="line">b    <span class="number">7</span></div><div class="line">a   <span class="number">-5</span></div><div class="line">c    <span class="number">3</span></div><div class="line">dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2[<span class="string">'a'</span>] <span class="comment"># 与Numpy数组相比，可以通过索引获得单个值或者一组值</span></div><div class="line"><span class="number">-5</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj2[obj2&gt;<span class="number">0</span>] <span class="comment"># 过滤</span></div><div class="line">d    <span class="number">4</span></div><div class="line">b    <span class="number">7</span></div><div class="line">c    <span class="number">3</span></div><div class="line">dtype: int64</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'a'</span> <span class="keyword">in</span> obj2 <span class="comment">#把Series看成一个有序字典</span></div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="comment">### 使用字典构建Series对象</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sdata = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">4</span>&#125; </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>obj3 = Series(sda)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>pd.isnull(obj3) <span class="comment"># 检测确实数据（NaN）# notnull()</span></div><div class="line">a    <span class="keyword">False</span></div><div class="line">b    <span class="keyword">False</span></div><div class="line">c    <span class="keyword">False</span></div><div class="line">d    <span class="keyword">False</span></div></pre></td></tr></table></figure>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ol>
+<li>DataFrame是一个表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型；</li>
+<li>DataFrame既有行索引也有列索引，可以被看做是Series组成的字典。</li>
+<li>DataFrame中的数据是以一个或多个二维块存放的</li>
+</ol>
+<h3 id="创建DataFrame数据"><a href="#创建DataFrame数据" class="headerlink" title="创建DataFrame数据"></a>创建DataFrame数据</h3><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = &#123;<span class="string">'state'</span>: [<span class="string">'a'</span>, <span class="string">'b'</span>], <span class="string">'year'</span>: [<span class="number">2000</span>, <span class="number">2001</span>], <span class="string">'pop'</span>: [<span class="number">1.5</span>, <span class="number">1.7</span>]&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>frame = DataFrame(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>frame</div><div class="line">   pop state  year</div><div class="line"><span class="number">0</span>  <span class="number">1.5</span>     a  <span class="number">2000</span></div><div class="line"><span class="number">1</span>  <span class="number">1.7</span>     b  <span class="number">2001</span></div></pre></td></tr></table></figure>
+<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二维ndarray</td>
+<td>数据矩阵，还可以传入行标和列标</td>
+</tr>
+<tr>
+<td>由数组、列表或元祖组成的字典</td>
+<td>每个序列会变成DataFrame的一列，所有序列的长度必须相同</td>
+</tr>
+<tr>
+<td>NumPy的结构化/记录数组</td>
+<td>类似于”由数组组成的字典”</td>
+</tr>
+<tr>
+<td>由Series组成的字典</td>
+<td>每个Series成为一列。如果没有指定索引，则各Series的索引会被合并成结果的行索引</td>
+</tr>
+<tr>
+<td>由字典组成的字典</td>
+<td>各内层字典会成为一列，键会被合并成结果的行索引</td>
+</tr>
+<tr>
+<td>字典或Series列表</td>
+<td>各项将会成为DataFrame的一行，字典键或Series索引的并集将会成为DataFrame的列标</td>
+</tr>
+<tr>
+<td>由列表或元祖组成的列表</td>
+<td>类似于”二维ndarray”</td>
+</tr>
+<tr>
+<td>另一个DataFrame</td>
+<td>对象拷贝，可指定新的索引</td>
+</tr>
+<tr>
+<td>NumPy的MaskedArray</td>
+<td>类似于”二维码ndarray”的情况，只是掩码值在结果DataFrame会变成NA/缺失值</td>
+</tr>
+</tbody>
+</table>
 <h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><h4 id="1-重新索引"><a href="#1-重新索引" class="headerlink" title="1. 重新索引"></a>1. 重新索引</h4><p>方法： reindex(new_index, fill_value=?, method=”, …)</p>
 <p>参数列表：</p>
 <table>
@@ -664,7 +713,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -672,7 +721,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -681,7 +730,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -710,7 +759,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">1.</span> <span class="nav-text">Series</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">2.1.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-重新索引"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 重新索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除索引"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 删除索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-索引、选取和过滤"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 索引、选取和过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-算术运算和数据对齐"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 算术运算和数据对齐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-函数运算"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. 函数运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-排序与排名"><span class="nav-number">2.1.6.</span> <span class="nav-text">6. 排序与排名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-有重复值的索引"><span class="nav-number">2.1.7.</span> <span class="nav-text">7. 有重复值的索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计计算"><span class="nav-number">3.</span> <span class="nav-text">统计计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理缺失数据"><span class="nav-number">4.</span> <span class="nav-text">处理缺失数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dropna方法"><span class="nav-number">4.1.</span> <span class="nav-text">dropna方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fillna"><span class="nav-number">4.2.</span> <span class="nav-text">fillna</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">4.2.1.</span> <span class="nav-text">参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用函数"><span class="nav-number">5.</span> <span class="nav-text">常用函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">1.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本知识"><span class="nav-number">1.1.</span> <span class="nav-text">基本知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法示例"><span class="nav-number">1.2.</span> <span class="nav-text">使用方法示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">2.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">2.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建DataFrame数据"><span class="nav-number">2.2.</span> <span class="nav-text">创建DataFrame数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">2.2.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造方法"><span class="nav-number">2.2.2.</span> <span class="nav-text">构造方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">2.3.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-重新索引"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 重新索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除索引"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 删除索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-索引、选取和过滤"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. 索引、选取和过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-算术运算和数据对齐"><span class="nav-number">2.3.4.</span> <span class="nav-text">4. 算术运算和数据对齐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-函数运算"><span class="nav-number">2.3.5.</span> <span class="nav-text">5. 函数运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-排序与排名"><span class="nav-number">2.3.6.</span> <span class="nav-text">6. 排序与排名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-有重复值的索引"><span class="nav-number">2.3.7.</span> <span class="nav-text">7. 有重复值的索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计计算"><span class="nav-number">3.</span> <span class="nav-text">统计计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理缺失数据"><span class="nav-number">4.</span> <span class="nav-text">处理缺失数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dropna方法"><span class="nav-number">4.1.</span> <span class="nav-text">dropna方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fillna"><span class="nav-number">4.2.</span> <span class="nav-text">fillna</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">4.2.1.</span> <span class="nav-text">参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用函数"><span class="nav-number">5.</span> <span class="nav-text">常用函数</span></a></li></ol></div>
             
           </div>
         </section>
